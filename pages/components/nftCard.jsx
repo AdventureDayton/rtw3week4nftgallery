@@ -1,3 +1,4 @@
+
 export const NFTCard = ({ nft }) => {
 
     return (
@@ -10,13 +11,12 @@ export const NFTCard = ({ nft }) => {
                 <h2 className="text-xl text-white text-center">{nft.title}</h2>
                 <p className="text-sm text-white">Id: {nft.id.tokenId.substr(nft.id.tokenId.length - 4)}</p>        
             </div>
-
-            <div className="">
-                <h2 className="text-md text-white text-center">{nft.contract.address}</h2>
-                <p className="text-sm text-white"></p>
+            
+            <div className="copy text-md text-white text-center">
+                <h2  class="copy" href="#" target="collection_address" value={nft.contract.address}>CA: {nft.contract.address}</h2>  
             </div>
 
-            <div className="flex-grow mt-2">
+            <div className="flex-grow mt-1">
                 <p className="text-sm text-white">Description: {nft.description?.substr(0, 32)}...</p>
             </div>
             <div className="flex justify-center mb-1">

@@ -60,12 +60,13 @@ const Home = () => {
       <span className="bg-clip-text text-transparent py-9 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-8xl font-bold ...">Alchemy RTW3 Week4 (NFT GALLERY)</span>
       <div className="flex flex-col w-full justify-center items-center gap-y-6">
         
-        <input disabled={fetchForCollection}  className="w-1/4 bg-gradient-to-r from-violet-900 to-fuchsia-600 py-2 px-2 rounded-lg text-white focus:outline-slate-300 disabled:bg-slate-50 disabled:text-slate-50" onChange={(e)=>{setWalletAddress(e.target.value)}} value={wallet} type={"text"}  id="wallet_address" placeholder="Enter a wallet address here"></input>
+        <input disabled={fetchForCollection}  className="w-1/4 bg-gradient-to-r from-violet-900 to-fuchsia-600 py-2 px-2 rounded-lg text-white focus:outline-slate-300 disabled:bg-slate-50 disabled:text-violet-900" onChange={(e)=>{setWalletAddress(e.target.value)}} value={wallet} type={"text"}  placeholder="Enter a wallet address here"></input>
+        
+        <label className="text-white"><input onChange={(e)=>{setFetchForCollection(e.target.checked)}} type={"checkbox"} className="mr-2"></input>Disable wallet address and search NFT collections!</label>
 
-        <input disabled={fetchForCollection}  className="w-1/4 bg-gradient-to-r from-violet-900 to-fuchsia-600 py-2 px-2 rounded-lg text-white focus:outline-slate-300 disabled:bg-slate-50 disabled:text-slate-50" onChange={(e)=>{setCollectionAddress(e.target.value)}} value={collection} type={"text"}  id="collection_address" placeholder="Enter a collection address here"></input>
+        <input className="w-1/4 bg-gradient-to-r from-violet-900 to-fuchsia-600 py-2 px-2 rounded-lg text-white focus:outline-slate-300" onChange={(e)=>{setCollectionAddress(e.target.value)}} value={collection} type={"text"}  placeholder="Enter a collection address here"></input>
 
-        <label className="text-gray-600 "><input onChange={(e)=>{setFetchForCollection(e.target.checked)}} type={"checkbox"} className="mr-2"></input>Search collections</label>
-        <button className={"disabled:bg-slate-500 text-white bg-gradient-to-r from-violet-900 to-fuchsia-600 px-4 rounded-lg w-1/8"} onClick={
+        <button className={"text-white bg-gradient-to-r from-violet-900 to-fuchsia-600 px-4 rounded-lg w-1/8"} onClick={
           () => {
             if (fetchForCollection) {
               fetchNFTsForCollection()
